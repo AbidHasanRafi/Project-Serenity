@@ -1,23 +1,20 @@
-// import React from "react";
+// import React from 'react';
 
-function Forum() {
+const Forum = () => {
   return (
-    <div>
-      <header className="header">
-        <h1>Discussion Forum</h1>
-      </header>
+    <div className="section-content">
+      <h2>Forum</h2>
+      <p>Welcome to the student forum. Post your questions or comments below:</p>
+      <textarea rows="5" cols="50" placeholder="Type your question here..."></textarea>
+      <button>Submit</button>
 
-      <div className="card">
-        <h2>Web Development Forum</h2>
-        <p>Discuss and ask questions about web development here.</p>
-      </div>
-
-      <div className="card">
-        <h2>Algorithms and Data Structures Forum</h2>
-        <p>Join the discussion on problem-solving and algorithms.</p>
-      </div>
+      <h3>Recent Discussions:</h3>
+      <ul>
+        <li>How to prepare for the IT final project? - John Doe</li>
+        <li>Any tips for improving English writing? - Jane Smith</li>
+      </ul>
     </div>
   );
-}
+};
 
 export default Forum;

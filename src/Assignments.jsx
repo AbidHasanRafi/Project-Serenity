@@ -1,23 +1,16 @@
-// import React from "react";
+// import React from 'react';
 
-function Assignments() {
+const Assignments = () => {
   return (
-    <div>
-      <header className="header">
-        <h1>Your Assignments</h1>
-      </header>
-
-      <div className="card">
-        <h2>Web Development Assignment</h2>
-        <p>Due Date: 25th September</p>
-      </div>
-
-      <div className="card">
-        <h2>Data Structures Assignment</h2>
-        <p>Due Date: 1st October</p>
-      </div>
+    <div className="section-content">
+      <h2>Assignments</h2>
+      <p>No new assignments at the moment.</p>
+      <ul>
+        <li>Assignment 1: English Essay - Due: 2023-10-15</li>
+        <li>Assignment 2: IT Project - Due: 2023-11-05</li>
+      </ul>
     </div>
   );
-}
+};
 
 export default Assignments;

@@ -1,0 +1,125 @@
+/* Layout Styles */
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #012a61;
+  padding: 20px;
+  color: white;
+}
+
+.main-content {
+  width: 80%;
+  padding: 20px;
+  background-color: #f5f7fb;
+}
+
+.dashboard-header {
+  margin-bottom: 20px;
+}
+
+.announcement img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.courses-overview, .progress-cards {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.course-card, .progress-card {
+  background-color: #017b95;
+  padding: 20px;
+  width: 30%;
+  text-align: center;
+  border-radius: 8px;
+  color: white;
+  margin: 10px 0;
+}
+
+/* Sidebar styles */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+}
+
+.team-logo {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.user-info {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.user-avatar {
+  width: 50px;
+  border-radius: 50%;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 15px 0;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.menu li:hover {
+  background-color: #0053a1;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+
+
+.section-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button {
+  background-color: #017b95;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #015f6f;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}

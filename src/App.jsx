@@ -1,59 +1,65 @@
-// import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Dashboard from "./Dashboard.jsx";
-import Courses from "./Courses.jsx";
-import Assignments from "./Assignments.jsx";
-import Forum from "./Forum.jsx";
-import Profile from "./Profile.jsx";
-import Logins from "./Logins.jsx";
-import Calendar from "./Calendar.jsx";
-// import TeamLogo from "./Team Logo.png";
+import  { useState } from 'react';
 import './App.css';
+import Home from './Home';
+import MyCourses from './MyCourses';
+import Assignments from './Assignments';
+import TimeTable from './TimeTable';
+import Forum from './Forum';
+import Settings from './Settings';
+// import Dashboard from './Dashboard';
 
 function App() {
-  return (
-    <Router>
-      <div className="app-container">
-        <nav className="sidebar">
-          <h2>Student Portal</h2>
-          <ul>
-            <li>
-              <Link to="/" className="nav-link">Dashboard</Link>
-            </li>
-            <li>
-              <Link to="/courses" className="nav-link">Courses</Link>
-            </li>
-            <li>
-              <Link to="/assignments" className="nav-link">Assignments</Link>
-            </li>
-            <li>
-              <Link to="/forum" className="nav-link">Forum</Link>
-            </li>
-            <li>
-              <Link to="/profile" className="nav-link">Profile</Link>
-            </li>
-            <li>
-              <Link to="/logins" className="nav-link">Login</Link>
-            </li>
-            <li>
-              <Link to="/calendar" className="nav-link">Calendar</Link>
-            </li>
-          </ul>
-        </nav>
+   
+  const [activeSection, setActiveSection] = useState('Home'); // State to track the active section
 
-        <div className="main-content">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/assignments" element={<Assignments />} />
-            <Route path="/forum" element={<Forum />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/logins" element={<Logins />} />
-            <Route path="/calendar" element={<Calendar />} />
-          </Routes>
+  const renderSection = () => {
+    switch (activeSection) {
+      case 'Home':
+        return <Home />;
+      case 'My Courses':
+        return <MyCourses />;
+      case 'Assignments':
+        return <Assignments />;
+      case 'Time Table':
+        return <TimeTable />;
+      case 'Forum':
+        return <Forum />;
+      case 'Settings':
+        return <Settings />;
+      default:
+        return <Home />;
+    }
+  };
+
+  return (
+    <div className="dashboard-container">
+      {/* Sidebar */}
+      <div className="sidebar">
+        <div className="sidebar-header">
+          <img src="Team Logo.png" alt="team Logo" className="team-logo" />
+          <h3>Serenity</h3>
         </div>
+        <div className="user-info">
+          <img src="user-avatar.png" alt="User Avatar" className="user-avatar" />
+          <p>Hi, Taha</p>
+          <span>E173037</span>
+        </div>
+        <ul className="menu">
+          <li onClick={() => setActiveSection('Home')}>Home</li>
+          <li onClick={() => setActiveSection('My Courses')}>My Courses</li>
+          <li onClick={() => setActiveSection('Assignments')}>Assignments</li>
+          <li onClick={() => setActiveSection('Time Table')}>Time Table</li>
+          <li onClick={() => setActiveSection('Forum')}>Forum</li>
+          <li onClick={() => setActiveSection('Settings')}>Settings</li>
+          {/* <li onClick={() => setActiveSection('Dashboard')}>Dashboard</li> */}
+        </ul>
       </div>
-    </Router>
+
+      {/* Main Content */}
+      <div className="main-content">
+        {renderSection()}
+      </div>
+    </div>
   );
 }
 
